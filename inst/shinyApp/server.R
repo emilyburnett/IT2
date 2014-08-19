@@ -260,7 +260,8 @@ shinyServer(function(input, output,session) {
     if(input$submitSend!=0){                                             
       isolate({  
         source_info <- pull_source_info(input$project.id)
-        send.branch.si(source_info,input$filename.send,FALSE)
+        name<-ifelse(as.logical(input$all.branchesTF),"all",input$filename.send)
+        send.branch.si(source_info,name,all=as.logical(input$all.branchesTF))
         paste("Sent",input$filename.send,Sys.time()) 
       })
     } 
