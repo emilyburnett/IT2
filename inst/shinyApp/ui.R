@@ -80,6 +80,7 @@ shinyUI(fluidPage(theme="style.css",pageWithSidebar(
                      htmlOutput("projectselected5"),
                      textInput('filename.send', "Filename:", value = "MyProgram.R"),
                      br(),br(),
+                     selectInput('all.branchesTF',"Send all branches?",c("FALSE","TRUE"),"FALSE"),
                      actionButton("submitSend","Send"),
                      br(),br(),
                      img(src="sendBranch.jpg",height=275,width=450)
